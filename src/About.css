@@ -1,0 +1,249 @@
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+   
+}
+
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 90%;
+    gap: 50px;
+}
+
+.photo-portfolio {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Initially hidden */
+    transform: translateX(-100%); /* Positioned off-screen to the left */
+}
+
+.about-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    opacity: 0; /* Initially hidden */
+    transform: translateX(100%); /* Positioned off-screen to the right */
+}
+
+/* Animation for sliding in from the left */
+@keyframes slide-in-left {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animation for sliding in from the right */
+@keyframes slide-in-right {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Apply the animations */
+.slide-in-left {
+    animation: slide-in-left 1s forwards;
+}
+
+.slide-in-right {
+    animation: slide-in-right 1s forwards;
+}
+
+.section-title h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.circular-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.circular-image {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #ddd;
+}
+
+.about-data .box {
+    position: relative;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px 0 rgba(69, 67, 96, .1);
+    display: flex;
+    gap: 20px;
+}
+
+.about-data .box::before {
+    content: '';
+    position: absolute;
+    left: -25px;
+    background-color: transparent;
+    border: 13px solid transparent;
+    border-left-color: #fff;
+    transform: rotate(180deg);
+}
+
+.about-data .box .text,
+.about-data .box .skills {
+    width: 50%;
+}
+
+.about-data .box .text p {
+    margin-bottom: 20px;
+}
+
+.about-data .box .skills {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+}
+
+.skills .skill {
+    width: 100%;
+}
+
+.skills-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.skills-info h4 {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.progress {
+    height: 7px;
+    width: 100%;
+    background-color: #f1f1f1;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    background-color: var(--clr, #ddd); /* Fallback color */
+    width: 0; /* Start with width 0 */
+    height: 100%;
+    transition: width 2s; /* Ensure smooth transition */
+}
+
+.about.active .progress-bar {
+    animation: fills 2s forwards;
+}
+
+@keyframes fills {
+    from {
+        width: 0;
+    }
+    to {
+        width: var(--width); /* Animate to the specified width */
+    }
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px 20px;
+}
+
+.grid-container {
+    margin: auto;
+    max-width: 600px;
+    aspect-ratio: 1/1;
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+}
+
+.collage1 .item {
+    border: 5px solid white;
+}
+
+.collage2 {
+    background: linear-gradient(135deg, rgb(255, 255, 255) 0%, rgb(145, 145, 145) 100%);
+}
+
+.collage2 .item {
+    border: 5px solid black;
+}
+
+.item {
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.5) 10px 10px 10px 0px;
+}
+
+/* Grid item positioning */
+.item1 {
+    z-index: 10;
+    grid-area: 1/6/5/10;
+}
+.item2 {
+    z-index: 6;
+    grid-area: 5/1/11/7;
+}
+.item3 {
+    z-index: 5;
+    grid-area: 4/6/11/13;
+}
+.item4 {
+    grid-area: 2/-1/8/-7;
+}
+.item5 {
+    z-index: 10;
+    grid-area: 7/-3/10/-6;
+}
+.item6 {
+    z-index: 6;
+    grid-area: -1/3/-9/11;
+}
+.item7 {
+    z-index: 6;
+    grid-area: -3/-2/-9/-8;
+}
+
+.grid-container > * {
+    transition: all 0.5s;
+}
+.grid-container > *:hover {
+    z-index: 99;
+    transform: scale(1.3);
+}
+
+/* General reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

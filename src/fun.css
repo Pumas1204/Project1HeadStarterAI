@@ -1,0 +1,44 @@
+.gameCanvas {
+    border: 1px solid #000;
+    display: block;
+    margin: 0 auto;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    /* Optional: Add some padding to prevent the snake from being cut off */
+    padding: 10px;
+    background-color: #f8f9fa;
+  }
+  
+  .gameOverContainer {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .gameOver {
+    color: #dc3545; /* Bootstrap's red color */
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .tryAgainButton {
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    color: #fff;
+    background: linear-gradient(135deg, #007bff, #6610f2);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .tryAgainButton:hover {
+    background: linear-gradient(135deg, #6610f2, #007bff);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .tryAgainButton:active {
+    background: #0056b3;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
